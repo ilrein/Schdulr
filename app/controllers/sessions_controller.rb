@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   	if logged_in?
       # Get current date
       @current_week = Date.today.beginning_of_week
-      redirect_to root_url
+      redirect_to schedules_path
   	else
   		flash[:alert] = "Invalid login, please try again!"
   		redirect_to root_url
