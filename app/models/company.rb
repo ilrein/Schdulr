@@ -50,4 +50,8 @@ class Company < ActiveRecord::Base
   def days_array
     ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
   end
+
+  def generate_serial
+    self.update_attribute(:serial, SecureRandom.hex)
+  end
 end

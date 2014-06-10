@@ -21,7 +21,9 @@ class UsersController < ApplicationController
       @company.save!
       @location.save!
 
-      
+        if @company.save!
+          @company.generate_serial
+        end
 
       flash[:notice] = "Created new user!"
       redirect_to root_path
